@@ -7,7 +7,11 @@ class UserController:
     def __init__(self):
         self.users = {}  # Словарь для хранения пользователей
         self.next_id = 1  # Счётчик для генерации ID (идентификатор пользователя)
-        self.list_users = [] # Список словарей
+        self.list_users = [
+            {'user_id': 1, 'login': 'admin', 'password': '111111', 'role': 'admin','first_autch':False, 'age': 35},
+            {'user_id': 2, 'login': 'user', 'password': '222222', 'role': 'user', 'first_autch':False,'status': True},
+            {'user_id': 3, 'login': 'manager', 'password': '3333', 'role': 'user', 'first_autch':True}
+        ] # Список словарей
         '''
         [
             {'user_id': 1, 'login': 'admin', 'password': '111111', 'role': 'admin', 'age': 35},
@@ -121,29 +125,6 @@ class UserController:
 if __name__ == "__main__":
     user = UserController()
 
-    user_1 = user.add(
-        login="admin",
-        password="111111",
-        role="admin",
-        age=35
-    )
-    user_2 = user.add(
-        login="user",
-        password="222222",
-        role="user",
-        status=True
-    )
-    print("**************")
-    user_3 = user.add(
-        login="manager",
-        password="3333",
-        role="user",
-    )
-    user_4 = user.add(
-        login="manager_2",
-        password="3333",
-        role="user",
-    )
 
 
     for row in user.list_users:
